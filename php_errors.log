@@ -1,0 +1,1 @@
+[13-Dec-2018 19:13:40 UTC] PHP Fatal error:  Class 'Symfony\Component\HttpKernel\Kernel' not found in /home/ubuntu/workspace/src/Kernel.php on line 12

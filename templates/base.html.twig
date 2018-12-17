@@ -1,12 +1,49 @@
+{# templates/base.html.twig #}
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
     <head>
         <meta charset="UTF-8">
+        <meta http-equiv="Content-Language" content="pt-br">
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
+        
+        <!-- Bootstrap CSS File >
+		<link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet"-->
+		
+		<!-- Libraries CSS Files >
+		<link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+		<link href="lib/animate/animate.min.css" rel="stylesheet">
+		<link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+		<link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+		<link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet"-->
+		
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!--link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript-->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        <div class="container-fluid">
+            <div class="row" style="margin-top:65px;">
+                {% include '/menu/menu_superior.html.twig' %}
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <div id="sidebar">
+                        {% block sidebar %}
+                            {% include '/menu/menu_lateral.html.twig' %}
+                        {% endblock %}
+                    </div>
+                </div>
+                <div class="col-10">
+                    <div id="content">
+                        {% block body %}{% endblock %}
+                        {% block javascripts %}{% endblock %}
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
